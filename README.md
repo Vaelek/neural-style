@@ -148,10 +148,10 @@ path or a full absolute path.
 * `-gpu`: Zero-indexed ID of the GPU to use; for CPU mode set `-gpu` to -1.
 
 **Optimization options**:
-* `-content_weight`: How much to weight the content reconstruction term. Default is 5e0.
-* `-style_weight`: How much to weight the style reconstruction term. Default is 1e2.
+* `-content_weight`: How much to weight the content reconstruction term. Default is 5.
+* `-style_weight`: How much to weight the style reconstruction term. Default is 100.
 * `-tv_weight`: Weight of total-variation (TV) regularization; this helps to smooth the image.
-  Default is 1e-3. Set to 0 to disable TV regularization.
+  Default is 0.001. Set to 0 to disable TV regularization.
 * `-num_iterations`: Default is 1000.
 * `-init`: Method for generating the generated image; one of `random` or `image`.
   Default is `random` which uses a noise initialization as in the paper; `image`
@@ -161,7 +161,7 @@ path or a full absolute path.
   when using ADAM you will probably need to play with other parameters to get good results, especially
   the style weight, content weight, and learning rate; you may also want to normalize gradients when
   using ADAM.
-* `-learning_rate`: Learning rate to use with the ADAM optimizer. Default is 1e1.
+* `-learning_rate`: Learning rate to use with the ADAM optimizer. Default is 10.
 * `-normalize_gradients`: If this flag is present, style and content gradients from each layer will be
   L1 normalized. Idea from [andersbll/neural_artistic_style](https://github.com/andersbll/neural_artistic_style).
 
